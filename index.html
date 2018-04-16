@@ -11,9 +11,14 @@
     Chromium <script>document.write(process.versions.chrome)</script>,
     and Electron <script>document.write(process.versions.electron)</script>.
 
+    <!--<button id=b_focus>focus</button>-->
+
     <script>
       // You can also require other files to run in this process
-      require('./renderer.js')
+      //require('./renderer.js')
+      const win = window.open('child.html', '', 'width=100,height=100,left=0,top=0')
+      setTimeout(() => win.focus(), 2000)
+      //b_focus.onclick = () => win.focus()
     </script>
   </body>
 </html>
